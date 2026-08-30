@@ -1,0 +1,1 @@
+Put your real CV here and name it Ezz-Mohammed-CV.pdf. Replace the GitHub, LinkedIn and email placeholders in index.html.
