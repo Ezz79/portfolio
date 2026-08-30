@@ -248,7 +248,7 @@
 
   .contact-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     margin-top: 30px;
   }
@@ -272,6 +272,17 @@
     font-weight: 600;
     margin-top: 4px;
     word-break: break-all;
+  }
+
+  .contact-val a {
+    color: var(--primary-cyan);
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+  }
+
+  .contact-val a:hover {
+    color: #fff;
+    text-decoration: underline;
   }
 
   footer {
@@ -299,7 +310,6 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
   <header>
     <nav>
       <div class="nav-logo">EZZELDINE // SOC</div>
@@ -313,7 +323,6 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="hero-tag">Security Operations Center Specialist</div>
     <h1>Ezzeldine Mohamed</h1>
@@ -328,7 +337,6 @@
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about">
     <div class="section-title">About Me</div>
     <div class="grid-2">
@@ -343,12 +351,10 @@
     </div>
   </section>
 
-  <!-- Skills & Experience Section -->
   <section id="skills">
     <div class="section-title">Skills & Background</div>
     
     <div class="grid-3">
-      <!-- Technical Skills Card -->
       <div class="card">
         <div class="card-title" style="color: var(--primary-cyan);">Core Technical Skills</div>
         <ul>
@@ -361,7 +367,6 @@
         </ul>
       </div>
 
-      <!-- Experience Card -->
       <div class="card">
         <div class="card-title" style="color: var(--primary-cyan);">Practical Experience</div>
         <div class="timeline-item">
@@ -374,7 +379,6 @@
         </div>
       </div>
 
-      <!-- History & Education Card -->
       <div class="card">
         <div class="card-title" style="color: var(--primary-cyan);">Timeline & Education</div>
         <div class="timeline-item">
@@ -393,7 +397,6 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
   <section id="projects">
     <div class="section-title">Featured Cybersecurity Projects</div>
     
@@ -420,7 +423,6 @@
     </div>
   </section>
 
-  <!-- Services Section -->
   <section id="services">
     <div class="section-title">Services Offered</div>
     
@@ -436,7 +438,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact">
     <div class="contact-box">
       <h2 style="color: var(--primary-cyan); font-size: 2rem;">Get In Touch</h2>
@@ -444,26 +445,27 @@
       
       <div class="contact-grid">
         <div class="contact-card">
-          <div class="contact-label">Website</div>
-          <div class="contact-val">www.ezzmo.com</div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-val">
+            <a href="https://linkedin.com/in/ezz-mohammed" target="_blank" rel="noopener noreferrer">ezz-mohammed</a>
+          </div>
         </div>
         <div class="contact-card">
           <div class="contact-label">Email</div>
-          <div class="contact-val">ezz79784@gmail.com</div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-label">LinkedIn</div>
-          <div class="contact-val">ezz-mohammed</div>
+          <div class="contact-val">
+            <a href="mailto:ezz79784@gmail.com">ezz79784@gmail.com</a>
+          </div>
         </div>
         <div class="contact-card">
           <div class="contact-label">Phone</div>
-          <div class="contact-val">01224030419</div>
+          <div class="contact-val">
+            <a href="tel:01224030419">01224030419</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2026 Ezzeldine Mohamed Mahmoud — SOC Analyst Portfolio</p>
   </footer>
