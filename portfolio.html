@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ezzeldine Mohamed | SOC Analyst & Cybersecurity Specialist</title>
+<style>
+  :root {
+    --bg-color: #080b11;
+    --card-bg: rgba(15, 23, 42, 0.6);
+    --card-border: rgba(30, 41, 59, 0.8);
+    --primary-cyan: #00f2fe;
+    --primary-blue: #3b82f6;
+    --accent-green: #10b981;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Cyber Grid Background Effect */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+      linear-gradient(rgba(0, 242, 254, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 242, 254, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Navigation Bar */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(8, 11, 17, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--card-border);
+    z-index: 1000;
+  }
+
+  nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .nav-logo {
+    color: var(--primary-cyan);
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--primary-cyan);
+  }
+
+  /* Layout Containers */
+  section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 20px 40px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    color: var(--primary-cyan);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-title::before {
+    content: '//';
+    color: var(--primary-blue);
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 140px;
+  }
+
+  .hero-tag {
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 15px;
+  }
+
+  .hero-sub {
+    font-size: 1.4rem;
+    color: var(--primary-cyan);
+    margin-bottom: 25px;
+    font-weight: 400;
+  }
+
+  .hero-quote {
+    background: var(--card-bg);
+    border-left: 3px solid var(--primary-cyan);
+    border-top: 1px solid var(--card-border);
+    border-right: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+    padding: 20px 25px;
+    border-radius: 0 10px 10px 0;
+    color: var(--text-muted);
+    max-width: 800px;
+    font-size: 1.05rem;
+    margin-bottom: 35px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: transparent;
+    border: 1px solid var(--primary-cyan);
+    color: var(--primary-cyan);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    background: rgba(0, 242, 254, 0.1);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+  }
+
+  /* Grid Layouts */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  /* Component Cards */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 25px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 242, 254, 0.4);
+  }
+
+  .card-title {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  ul li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--primary-cyan);
+    font-weight: bold;
+  }
+
+  /* Timeline Cards */
+  .timeline-item {
+    margin-bottom: 20px;
+  }
+
+  .timeline-year {
+    color: var(--primary-blue);
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  /* Contact Section */
+  .contact-box {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .contact-card {
+    background: rgba(8, 11, 17, 0.6);
+    border: 1px solid var(--card-border);
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .contact-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .contact-val {
+    color: var(--primary-cyan);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 4px;
+    word-break: break-all;
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--card-border);
+    margin-top: 60px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .grid-2, .grid-3, .contact-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    .nav-links {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <div class="nav-logo">EZZELDINE // SOC</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills & Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-tag">Security Operations Center Specialist</div>
+    <h1>Ezzeldine Mohamed</h1>
+    <div class="hero-sub">Protecting Enterprise Infrastructure through Threat Detection & Response</div>
+    
+    <div class="hero-quote">
+      "I am a Cybersecurity Specialist focused on Threat Detection, Incident Response, and Security Operations. I combine hands-on SIEM monitoring, log analysis, and endpoint security to identify vulnerabilities, mitigate active threats, and keep enterprise networks secure."
+    </div>
+
+    <div>
+      <a href="#projects" class="btn">View Technical Projects</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="section-title">About Me</div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title" style="color: var(--primary-cyan);">Core Objective</div>
+        <p style="color: var(--text-muted);">I am a dedicated Cybersecurity Analyst specializing in Security Operations Center (SOC) workflows, threat monitoring, and incident response. My focus is on defense-in-depth strategies, analyzing malicious activity across enterprise networks, and securing endpoints against modern attack vectors.</p>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color: var(--primary-cyan);">Technical Approach</div>
+        <p style="color: var(--text-muted);">I bring practical expertise in SIEM analysis, system logging, and enterprise firewall management. Whether crafting complex detection queries, analyzing command-and-control payloads, or configuring site-to-site VPNs, I aim to minimize response times and eliminate security blind spots.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Experience Section -->
+  <section id="skills">
+    <div class="section-title">Skills & Background</div>
+    
+    <div class="grid-3">
+      <!-- Technical Skills Card -->
+      <div class="card">
+        <div class="card-title" style="color: var(--primary-cyan);">Core Technical Skills</div>
+        <ul>
+          <li>SIEM: Splunk & SPL Query Optimization</li>
+          <li>Log Telemetry: Sysmon & Windows Event Logs</li>
+          <li>Network Defense: FortiGate, IPsec VPN, SD-WAN</li>
+          <li>Traffic Analysis: Wireshark & CCNA Protocols</li>
+          <li>Automation: Python Security Scripting</li>
+          <li>Virtualization: VMware Workstation & GNS3</li>
+        </ul>
+      </div>
+
+      <!-- Experience Card -->
+      <div class="card">
+        <div class="card-title" style="color: var(--primary-cyan);">Practical Experience</div>
+        <div class="timeline-item">
+          <div style="color: #fff; font-weight: 600;">DEPI Trainee – Network Security</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Configured FortiGate firewalls, IPsec VPN tunnels, security profiles, and traffic rules.</p>
+        </div>
+        <div class="timeline-item">
+          <div style="color: #fff; font-weight: 600;">SOC Threat Detection Lab</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Deployed C2 payloads, configured Sysmon event telemetry, and authored Splunk detection rules.</p>
+        </div>
+      </div>
+
+      <!-- History & Education Card -->
+      <div class="card">
+        <div class="card-title" style="color: var(--primary-cyan);">Timeline & Education</div>
+        <div class="timeline-item">
+          <div class="timeline-year">2024–2025</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">CCNA network security fundamentals & FortiGate firewall administration.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2026</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">SOC operations, threat hunting, C2 simulations, and SIEM rule development.</p>
+        </div>
+        <div style="border-top: 1px solid var(--card-border); padding-top: 10px;">
+          <div style="color: #fff; font-size: 0.9rem; font-weight: 600;">B.S. Mathematics & Computer Science</div>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">Helwan University</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="section-title">Featured Cybersecurity Projects</div>
+    
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">Project 01: C2 Attack Emulation & SIEM Detection</div>
+        <p style="font-size: 0.85rem; color: var(--primary-blue); margin-bottom: 15px;">Splunk SIEM, Sysmon, Ghost-C2 Framework, Windows Server, VMware</p>
+        <ul>
+          <li>Simulated active command-and-control payloads on isolated endpoint virtual machines.</li>
+          <li>Generated low-level system telemetry using custom Sysmon logging profiles.</li>
+          <li>Authored Splunk SPL detection queries to catch execution, persistence mechanics, and lateral movement.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Project 02: Enterprise Network Security & SD-WAN Lab</div>
+        <p style="font-size: 0.85rem; color: var(--primary-blue); margin-bottom: 15px;">FortiGate CLI/GUI, GNS3, IPsec VPN, CCNA Standards</p>
+        <ul>
+          <li>Designed and deployed a multi-site enterprise topology utilizing FortiGate virtual firewalls.</li>
+          <li>Established encrypted site-to-site IPsec VPN tunnels for secure cross-site connectivity.</li>
+          <li>Applied strict web filtering policies, security profiles, and traffic shaping rules.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="section-title">Services Offered</div>
+    
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title" style="color: var(--primary-cyan);">1. Threat Detection & SIEM Monitoring</div>
+        <p style="color: var(--text-muted);">Continuous log ingestion analysis, event monitoring, custom alert formulation, and rule tuning in SIEM environments to identify adversary behavior before exploitation occurs.</p>
+      </div>
+      <div class="card">
+        <div class="card-title" style="color: var(--primary-cyan);">2. Incident Response & Firewall Hardening</div>
+        <p style="color: var(--text-muted);">Deep analysis of suspicious network traffic, defensive policy execution, enterprise network segmentation, and securing site-to-site communications via encrypted IPsec VPN tunnels.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact-box">
+      <h2 style="color: var(--primary-cyan); font-size: 2rem;">Get In Touch</h2>
+      <p style="color: var(--text-muted); margin-top: 10px;">Open to SOC Analyst, Threat Intelligence, and Defensive Security Engineering opportunities.</p>
+      
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-label">Website</div>
+          <div class="contact-val">www.ezzmo.com</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-label">Email</div>
+          <div class="contact-val">ezz79784@gmail.com</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-val">ezz-mohammed</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-label">Phone</div>
+          <div class="contact-val">01224030419</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Ezzeldine Mohamed Mahmoud — SOC Analyst Portfolio</p>
+  </footer>
+
+</body>
+</html>
